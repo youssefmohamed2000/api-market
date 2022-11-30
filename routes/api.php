@@ -22,7 +22,7 @@ Route::controller(AuthController::class)->group(function () {
 });
 
 
-Route::group(['middleware' => ['auth:sanctum'/*, 'verified'*/]], function () {
+Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     // BUYERS
     Route::controller(BuyerController::class)->group(function () {
         Route::get('buyer/{id}/transactions', 'transactions');
